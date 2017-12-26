@@ -20,14 +20,14 @@
             android:value="1920" />
 
         <activity android:name=".view.MainActivity"></activity>
-        <activity android:name=".view.other.SplashActivity">
+        <activity android:name=".view.other.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.other.GuideActivity"></activity>
+        <activity android:name=".view.other.activity.GuideActivity"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bg_splash"
-    tools:context="com.lsj.douyutv.view.other.SplashActivity">
+    tools:context="com.lsj.douyutv.view.other.activity.SplashActivity">
 
 </com.lsj.douyutv.ui.MyAutoRelativeLayout>

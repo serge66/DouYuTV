@@ -1,15 +1,19 @@
 package com.lsj.douyutv.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.lsj.douyutv.R;
+import com.lsj.douyutv.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
     }
 }

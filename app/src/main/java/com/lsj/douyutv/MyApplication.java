@@ -34,7 +34,7 @@ public class MyApplication extends Application {
                 .methodCount(10)         // (Optional) How many method line to show. Default 2
                 .methodOffset(0)        // (Optional) Hides internal method calls up to offset. Default 5
 //                .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
-                .tag("My custom tag")   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+                .tag("lsj")   // (Optional) Global tag for every log. Default PRETTY_LOGGER
                 .build();
 
         Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy) {

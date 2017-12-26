@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lsj.douyutv.ui.MyAutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90px"
+        android:background="@drawable/blue_btn_selector"
+        android:paddingBottom="20px"
+        android:paddingLeft="55px"
+        android:paddingRight="55px"
+        android:paddingTop="20px"
+        android:text="@string/guide"
+        android:textColor="@color/white"
+        android:textSize="50px"
+        android:visibility="gone" />
+</com.lsj.douyutv.ui.MyAutoRelativeLayout>
