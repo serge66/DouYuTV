@@ -6,4 +6,6 @@
     <color name="white">#ffffff</color>
     <color name="blue_btn_pressed">#ff96bfd2</color>
     <color name="blue_btn_unpressed">#ffaedef4</color>
+    <color name="main_tab_selected">#FD9835</color>
+    <color name="main_tab_pressed">#929292</color>
 </resources>

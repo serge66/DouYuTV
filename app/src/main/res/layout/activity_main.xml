@@ -1,18 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.lsj.douyutv.ui.MyAutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.lsj.douyutv.view.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <com.lsj.douyutv.ui.MyAutoLinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.lsj.douyutv.ui.MyAutoLinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:background="@drawable/selsect_drawable_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:textColor="@drawable/select_text_main"
+                android:textSize="35px" />
+
+        </com.lsj.douyutv.ui.MyAutoLinearLayout>
+
+        <com.lsj.douyutv.ui.MyAutoLinearLayout
+            android:id="@+id/ll_ive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:background="@drawable/selsect_drawable_live" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/live"
+                android:textColor="@drawable/select_text_main"
+                android:textSize="35px" />
+        </com.lsj.douyutv.ui.MyAutoLinearLayout>
+
+        <com.lsj.douyutv.ui.MyAutoLinearLayout
+            android:id="@+id/ll_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:background="@drawable/selsect_drawable_video" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video"
+                android:textColor="@drawable/select_text_main"
+                android:textSize="35px" />
+
+        </com.lsj.douyutv.ui.MyAutoLinearLayout>
+
+        <com.lsj.douyutv.ui.MyAutoLinearLayout
+            android:id="@+id/ll_attention"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:background="@drawable/selsect_drawable_attention" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/attention"
+                android:textColor="@drawable/select_text_main"
+                android:textSize="35px" />
+        </com.lsj.douyutv.ui.MyAutoLinearLayout>
+
+        <com.lsj.douyutv.ui.MyAutoLinearLayout
+            android:id="@+id/ll_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:background="@drawable/selsect_drawable_my" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my"
+                android:textColor="@drawable/select_text_main"
+                android:textSize="35px" />
+
+        </com.lsj.douyutv.ui.MyAutoLinearLayout>
+
+    </com.lsj.douyutv.ui.MyAutoLinearLayout>
+</com.lsj.douyutv.ui.MyAutoLinearLayout>
