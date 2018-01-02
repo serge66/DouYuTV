@@ -1,33 +1,28 @@
 package com.lsj.douyutv.view;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
 
 import com.lsj.douyutv.R;
 import com.lsj.douyutv.base.BaseActivity;
-import com.lsj.douyutv.ui.MyAutoLinearLayout;
+import com.lsj.douyutv.ui.NavigateTabBar;
+import com.lsj.douyutv.view.attention.FollowFragment;
+import com.lsj.douyutv.view.home.HomeFragment;
+import com.lsj.douyutv.view.live.LiveFragment;
+import com.lsj.douyutv.view.my.UserFragment;
+import com.lsj.douyutv.view.video.VideoFragment;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
+    private static final String TAG_PAGE_HOME = "首页";
+    private static final String TAG_PAGE_LIVE = "直播";
+    private static final String TAG_PAGE_VIDEO = "视频";
+    private static final String TAG_PAGE_FOLLOW = "关注";
+    private static final String TAG_PAGE_USER = "我的";
 
-    @BindView(R.id.frame)
-    FrameLayout frame;
-    @BindView(R.id.ll_home)
-    MyAutoLinearLayout llHome;
-    @BindView(R.id.ll_ive)
-    MyAutoLinearLayout llIve;
-    @BindView(R.id.ll_video)
-    MyAutoLinearLayout llVideo;
-    @BindView(R.id.ll_attention)
-    MyAutoLinearLayout llAttention;
-    @BindView(R.id.ll_my)
-    MyAutoLinearLayout llMy;
-    @BindView(R.id.ll)
-    MyAutoLinearLayout ll;
+    @BindView(R.id.mainTabBar)
+    NavigateTabBar mNavigateTabBar;
 
     @Override
     protected int getLayoutId() {
@@ -37,22 +32,63 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        llHome.setSelected(true);
+        initView(savedInstanceState);
     }
 
-    @OnClick({R.id.ll_home, R.id.ll_ive, R.id.ll_video, R.id.ll_attention, R.id.ll_my})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.ll_home:
-                break;
-            case R.id.ll_ive:
-                break;
-            case R.id.ll_video:
-                break;
-            case R.id.ll_attention:
-                break;
-            case R.id.ll_my:
-                break;
-        }
+    private void initView(Bundle savedInstanceState) {
+        mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
+        mNavigateTabBar.addTab(HomeFragment.class, new NavigateTabBar.TabParam(R.mipmap.home_pressed, R.mipmap
+                .home_selected, TAG_PAGE_HOME));
+        mNavigateTabBar.addTab(LiveFragment.class, new NavigateTabBar.TabParam(R.mipmap.live_pressed, R.mipmap
+                .live_selected, TAG_PAGE_LIVE));
+        mNavigateTabBar.addTab(VideoFragment.class, new NavigateTabBar.TabParam(R.mipmap.video_pressed, R
+                .mipmap.video_selected, TAG_PAGE_VIDEO));
+        mNavigateTabBar.addTab(FollowFragment.class, new NavigateTabBar.TabParam(R.mipmap.follow_pressed,
+                R.mipmap.follow_selected, TAG_PAGE_FOLLOW));
+        mNavigateTabBar.addTab(UserFragment.class, new NavigateTabBar.TabParam(R.mipmap.user_pressed, R.mipmap
+                .user_selected, TAG_PAGE_USER));
+        mNavigateTabBar.setTabSelectListener(new NavigateTabBar.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(NavigateTabBar.ViewHolder holder) {
+                //                Toast.makeText(MainActivity.this, "信息为:"+holder.tag, Toast.LENGTH_SHORT).show();
+                switch (holder.tag.toString()) {
+                    //                    首页
+                    case TAG_PAGE_HOME:
+                        mNavigateTabBar.showFragment(holder);
+                        break;
+                    //                    直播
+                    case TAG_PAGE_LIVE:
+                        mNavigateTabBar.showFragment(holder);
+                        break;
+                    //                    视频
+                    case TAG_PAGE_VIDEO:
+                        mNavigateTabBar.showFragment(holder);
+                        break;
+                    //                    关注
+                    case TAG_PAGE_FOLLOW:
+                        mNavigateTabBar.showFragment(holder);
+                        break;
+                    //                    我的
+                    case TAG_PAGE_USER:
+                        if (mNavigateTabBar != null)
+                            mNavigateTabBar.showFragment(holder);
+                        break;
+                }
+            }
+        });
     }
+
+
+    /**
+     * 保存数据状态
+     *
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mNavigateTabBar.onSaveInstanceState(outState);
+    }
+
+
 }

@@ -8,4 +8,9 @@
     <color name="blue_btn_unpressed">#ffaedef4</color>
     <color name="main_tab_selected">#FD9835</color>
     <color name="main_tab_pressed">#929292</color>
+    <!--主界面-->
+    <color name="tab_text_normal">#212121</color>
+    <!--TabBar 字体颜色-->
+    <color name="comui_tab_text_color">#929292</color>
+    <color name="comui_tab_select_color">#FD9835</color>
 </resources>
